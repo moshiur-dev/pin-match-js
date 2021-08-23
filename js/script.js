@@ -25,13 +25,20 @@ document.getElementById('keypad').addEventListener('click', function (event) {
 
     const newNumberDispaly = previousNumberDisplay + number;
 
-    numberDispaly.value = newNumberDispaly;
 
-    if (number == 'C') {
-        numberDispaly.value = '';
+
+    if (isNaN(number)) {
+        if (number == 'C') {
+            numberDispaly.value = '';
+        }
+        else if (number == '<') {
+
+            numberDispaly.value = numberDispaly.value.slice(0, -1);
+        }
     }
-
-
+    else {
+        numberDispaly.value = newNumberDispaly;
+    }
 
 });
 
